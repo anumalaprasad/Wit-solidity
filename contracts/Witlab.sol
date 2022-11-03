@@ -61,6 +61,7 @@ contract Witlab is ERC721, ERC721URIStorage, Ownable, PriceConsumerV3 {
         _safeMint(to, tokenId);
         string memory _to = toString(to);
         _setTokenURI(tokenId,  _to);
+        isMinted[to] = true; 
     }
 
     function mintUsingToken(address _tokenAddress) public  {
